@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="I build the prompts, content engines and product systems that turn 'I should post more' into a machine you run in minutes a week. For creators and builders who want output without the grind.">
+<title>Home · Kai Sterling</title>
+<style>:root{--brand:#3D4557;--brand2:#5A6478}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#14161f;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+.preview{background:#111;color:#ffd34d;text-align:center;padding:7px;font-size:12.5px;font-weight:600;letter-spacing:.3px}
+nav{display:flex;gap:20px;align-items:center;padding:16px 6vw;border-bottom:1px solid #eef0f5;position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);z-index:20}
+nav .logo{font-weight:800;color:var(--brand);margin-right:auto;font-size:18px;text-decoration:none}nav a{color:#555;text-decoration:none;font-size:14.5px}nav a:hover{color:var(--brand)}
+nav .navcta{background:var(--brand);color:#fff;padding:8px 16px;border-radius:9px;font-weight:700;font-size:14px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 6vw}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:64px 0 40px}@media(max-width:820px){.hero{grid-template-columns:1fr;gap:28px}}
+.eyebrow{display:inline-block;background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff;font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin-bottom:16px}
+.hero h1{font-size:46px;line-height:1.06;letter-spacing:-1.4px;margin-bottom:16px}@media(max-width:820px){.hero h1{font-size:34px}}
+.hero .hook{font-size:19px;color:#4a4f60;margin-bottom:24px;max-width:36ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;background:var(--brand);color:#fff;padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px;box-shadow:0 6px 20px -6px var(--brand)}
+.btn:hover{filter:brightness(1.05)}
+.btn.ghost{background:#fff;color:var(--brand);box-shadow:none;border:1.5px solid #e3e6f0}
+.trust{font-size:13.5px;color:#6b7186;display:flex;gap:16px;flex-wrap:wrap;margin-top:14px}
+.portrait{width:100%;max-width:400px;height:auto;border-radius:24px;box-shadow:0 24px 60px -24px rgba(20,22,31,.4);margin:0 auto;display:block}
+.proofbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#eef0f5;border:1px solid #eef0f5;border-radius:16px;overflow:hidden;margin:12px 0 60px}
+.proofbar .p{background:#fff;padding:22px 18px;text-align:center}.proofbar .n{font-size:26px;font-weight:800;color:var(--brand);letter-spacing:-.5px}.proofbar .l{font-size:13px;color:#6b7186;margin-top:2px}
+.sec{padding:52px 0;border-top:1px solid #eef0f5}.sec h2{font-size:31px;letter-spacing:-.6px;margin-bottom:8px}.sec .lead{color:#4a4f60;margin-bottom:26px;max-width:60ch;font-size:17px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:820px){.why{grid-template-columns:1fr}}
+.why .card{background:#f8f9fc;border:1px solid #eef0f5;border-radius:16px;padding:24px}.why .card h3{font-size:18px;margin-bottom:6px}.why .card p{color:#4a4f60;font-size:15px}.why .card .ic{font-size:22px;margin-bottom:10px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:6px 0}@media(max-width:820px){.tiers{grid-template-columns:1fr}}
+.tier{border:1px solid #e6e9f2;border-radius:18px;padding:26px;position:relative;display:flex;flex-direction:column;background:#fff}
+.tier.feat{border:2px solid var(--brand);box-shadow:0 16px 40px -20px var(--brand)}
+.tier .ribbon{position:absolute;top:-12px;right:18px;background:var(--brand);color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;padding:4px 12px;border-radius:99px}
+.tier .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--brand)}.tier .name{font-size:20px;font-weight:800;margin:6px 0}
+.tier .price{font-size:34px;font-weight:800;letter-spacing:-1px}.tier .price small{font-size:15px;color:#8a90a2;font-weight:500}
+.tier .note{font-size:13px;color:#8a90a2;margin-top:2px}
+.tier ul{list-style:none;margin:16px 0;flex:1}.tier li{padding:6px 0 6px 24px;position:relative;color:#3a3f4d;font-size:14.5px}.tier li:before{content:"✓";position:absolute;left:0;color:var(--brand);font-weight:800}
+.tier .buy{display:block;text-align:center;background:var(--brand);color:#fff;padding:12px;border-radius:11px;text-decoration:none;font-weight:700;margin-top:8px}
+.tier:not(.feat) .buy{background:#14161f}
+.guarantee{display:flex;gap:20px;align-items:center;background:linear-gradient(90deg,var(--brand)10,var(--brand2)08);border:1px solid #eef0f5;border-radius:18px;padding:26px 28px;margin-top:8px}
+.guarantee .seal{font-size:42px}.guarantee h3{font-size:19px;margin-bottom:4px}.guarantee p{color:#4a4f60;font-size:15px}
+.faq .q{border-bottom:1px solid #eef0f5;padding:18px 0}.faq .q h3{font-size:17px;margin-bottom:6px}.faq .q p{color:#4a4f60;font-size:15px}
+.capture{background:#14161f;color:#fff;border-radius:22px;padding:44px;text-align:center;margin:14px 0 8px}
+.capture h2{color:#fff;font-size:27px}.capture p{color:#c3c8d6;margin:10px 0 20px;max-width:52ch;margin-left:auto;margin-right:auto}
+.capture .magnet{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:8px 14px;font-size:13.5px;margin-bottom:20px}
+.capture form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.capture input{padding:13px 16px;border:1px solid #3a3f4d;background:#20232e;color:#fff;border-radius:10px;width:min(320px,80%);font-size:15px}
+.upd{position:relative;padding:4px 0 4px 22px;margin-bottom:22px}.upd:before{content:"";position:absolute;left:0;top:10px;width:9px;height:9px;border-radius:50%;background:var(--brand)}.upd .d{font-size:13px;color:#9aa0b4}.upd b{font-size:16px}
+footer{padding:44px 6vw;color:#9aa0b4;font-size:13px;border-top:1px solid #eef0f5}footer b{color:var(--brand)}
+.disc{font-size:12.5px;color:#9aa0b4}
+.stickycta{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e6e9f2;padding:10px 5vw;display:none;justify-content:space-between;align-items:center;gap:12px;z-index:30;box-shadow:0 -6px 24px -12px rgba(0,0,0,.2)}
+.stickycta .b{background:var(--brand);color:#fff;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;white-space:nowrap}
+@media(max-width:820px){.stickycta{display:flex}body{padding-bottom:66px}}</style></head>
+<body><div class="preview">PREVIEW — soft launch Jul 26 · grok.cirogamino.com</div>
+<nav><a class="logo" href="index.html">Kai Sterling</a>
+<a href="products.html">Pricing</a><a href="about.html">About</a><a href="updates.html">Updates</a>
+<a class="navcta" href="products.html">Start</a></nav>
+<div class="wrap"><div class="hero"><div>
+      <span class="eyebrow">The Systems Guy</span>
+      <h1>Stop starting from a blank page. Run a system instead.</h1><p class="hook">I build the prompts, content engines and product systems that turn 'I should post more' into a machine you run in minutes a week. For creators and builders who want output without the grind.</p>
+      <div class="cta-row"><a class="btn" href="products.html">See the plans →</a>
+        <a class="btn ghost" href="#roi">Run the numbers</a></div>
+      <div class="trust"><span>✓ Cancel anytime</span><span>✓ Secure checkout via Polar</span><span>✓ New drops every week</span><span>✓ Built in public</span></div>
+    </div><div><svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" class="portrait" role="img" aria-label="Kai Sterling">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D4557"/><stop offset="1" stop-color="#5A6478"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.32" r="0.65"><stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="460" rx="24" fill="url(#g)"/>
+  <rect width="400" height="460" rx="24" fill="url(#glow)"/>
+  <circle cx="200" cy="168" r="96" fill="#ffffff" fill-opacity="0.14"/>
+  <circle cx="200" cy="168" r="96" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2"/>
+  <text x="200" y="205" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="86" font-weight="800" fill="#ffffff">KS</text>
+  <text x="200" y="330" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="30" font-weight="800" fill="#ffffff">Kai Sterling</text>
+  <text x="200" y="364" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="16" font-weight="500" fill="#ffffff" fill-opacity="0.9">Content &amp; product systems for creators and builders</text>
+  <text x="200" y="418" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="600" fill="#ffffff" fill-opacity="0.8" letter-spacing="1">GROK.CIROGAMINO.COM</text>
+</svg></div></div></div>
+    <div class="wrap"><div class="proofbar">
+  <div class="p"><div class="n">Weekly</div><div class="l">fresh prompt + workflow drops</div></div><div class="p"><div class="n">$9/mo</div><div class="l">entry price — less than lunch</div></div><div class="p"><div class="n">1 system</div><div class="l">replaces the blank page</div></div><div class="p"><div class="n">Notion</div><div class="l">dashboard included at mid tier</div></div></div></div>
+    <div class="wrap">
+      <div class="sec"><h2>Why 'just post more' never works</h2>
+  <p class="lead">Willpower doesn't scale. Systems do. The creators who stay consistent aren't more disciplined — they removed the decisions.</p>
+  <div class="why"><div class="card"><div class="ic">🧠</div><h3>The blank page is the bottleneck</h3><p>Most people don't lack ideas — they lack a starting structure. A ready prompt + workflow turns 'what do I make?' into 'fill this in and ship.'</p></div><div class="card"><div class="ic">⚙️</div><h3>Systems beat motivation</h3><p>A weekly drop means you never rely on a burst of inspiration. The next piece of content is always queued and half-built for you.</p></div><div class="card"><div class="ic">📦</div><h3>Built to compound</h3><p>Each drop stacks into a library. Six months in, you're not starting over every week — you're running a machine that keeps producing.</p></div></div></div>
+      <div class="sec"><h2>From weekly prompts to a full builder OS</h2><p class="lead">All monthly, cancel anytime. Start at $9 and scale into the full system.</p><div class="tiers"><div class="tier">
+  <span class="ribbon">Start here</span>
+  <div class="t">Small</div><div class="name">Creator Prompt Engine -4</div>
+  <div class="price">$9<small>/mo</small></div>
+  <div class="note">New drops every week</div>
+  <ul><li>Weekly profession-specific prompt drops</li><li>Copy-paste workflows</li><li>Content angles + hooks</li><li>Swipe-ready structures</li><li>Cancel anytime</li></ul>
+  <a class="buy" href="https://buy.polar.sh/polar_cl_9eFVCWzpfroN3YAmFXNR82hC8kzrfR6diPwVA0Za8Ej?utm_source=site&amp;utm_campaign=-4">Get started</a>
+</div><div class="tier feat">
+  <span class="ribbon">Most popular</span>
+  <div class="t">Medium</div><div class="name">Content Engine -4</div>
+  <div class="price">$47<small>/mo</small></div>
+  <div class="note">The system most creators need</div>
+  <ul><li>Everything in the Prompt Engine</li><li>Full monthly content system</li><li>Plug-and-play Notion dashboard</li><li>Repurposing workflows</li><li>Monthly strategy drop</li></ul>
+  <a class="buy" href="https://buy.polar.sh/polar_cl_W6HGvxpKgvSsN6HnDoP9MoYUykNG4vw7hMhGl3HiYs5?utm_source=site&amp;utm_campaign=-4">Get started</a>
+</div><div class="tier">
+  <span class="ribbon">For builders</span>
+  <div class="t">Big</div><div class="name">Builder OS -4</div>
+  <div class="price">$149<small>/mo</small></div>
+  <div class="note">For people launching products</div>
+  <ul><li>Everything in the Content Engine</li><li>Product launch systems + templates</li><li>Monthly strategy drops</li><li>Systems for offers, pages + funnels</li><li>Priority support</li></ul>
+  <a class="buy" href="https://buy.polar.sh/polar_cl_wMYsUtCmdiqZbPf2iMbobCMwqii5gQNGejphH2DJo9a?utm_source=site&amp;utm_campaign=-4">Get started</a>
+</div></div></div>
+      
+<div class="sec" id="roi"><h2>What consistent output is worth</h2>
+  <p class="lead">Move the numbers — watch what one result is worth against the price.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:560px">
+    <label style="font-size:14px;color:#555">What one client/customer is worth ($)<input id="rv" type="number" value="300" style="width:100%;padding:11px;border:1px solid #dde1ee;border-radius:9px;margin-top:4px"></label>
+    <label style="font-size:14px;color:#555">Extra clients/mo from showing up<input id="rc" type="number" value="3" style="width:100%;padding:11px;border:1px solid #dde1ee;border-radius:9px;margin-top:4px"></label>
+  </div>
+  <div id="roiOut" style="margin-top:20px;font-size:22px;font-weight:800;color:var(--brand)"></div>
+</div>
+<div class="sec" id="qualifier"><h2>Is this a fit for you?</h2>
+  <p class="lead">Check what's true. We'll point you to the right tier — no pressure.</p>
+  <div id="qz"><label style="display:block;padding:8px 0;font-size:15px;color:#333"><input type="checkbox" class="qzc" onchange="qzCalc()"> I'm a creator, freelancer, or building a product</label><label style="display:block;padding:8px 0;font-size:15px;color:#333"><input type="checkbox" class="qzc" onchange="qzCalc()"> I know I should post/ship more but keep stalling</label><label style="display:block;padding:8px 0;font-size:15px;color:#333"><input type="checkbox" class="qzc" onchange="qzCalc()"> I want a system, not another course</label><label style="display:block;padding:8px 0;font-size:15px;color:#333"><input type="checkbox" class="qzc" onchange="qzCalc()"> I'd rather run a machine than rely on motivation</label></div>
+  <div id="qzOut" style="margin-top:12px;font-weight:700"></div>
+</div>
+<script>
+(function(){var rv=document.getElementById('rv'),rc=document.getElementById('rc'),out=document.getElementById('roiOut'),price=9;
+  function calc(){var v=(+rv.value||0)*(+rc.value||0);var mult=price>0?(v/price):0;
+    out.innerHTML='That\'s <b>$'+v.toLocaleString()+'</b> in value — about <b>'+mult.toFixed(0)+'×</b> the $'+price+' price.';}
+  rv.addEventListener('input',calc);rc.addEventListener('input',calc);calc();
+  window.qzCalc=function(){var n=document.querySelectorAll('.qzc:checked').length;var o=document.getElementById('qzOut');
+    if(n===0){o.textContent='';return;}o.style.color=n>=3?'#0e9f6e':(n>=2?'#b45309':'#666');
+    o.textContent=n>=3?'✅ Strong fit — the mid or top tier will move fastest for you.':(n>=2?'👍 Good fit — start with the entry tier and grow.':'👀 Worth a look — the free starter kit is your best first step.');};})();
+</script>
+      <div class="sec"><div class="guarantee"><div class="seal">🛡️</div>
+  <div><h3>Try it a month, cancel in one click</h3><p>If the first month of drops doesn't make shipping easier, cancel through Polar — no forms, no guilt. You keep every drop you received.</p></div></div></div>
+      <div class="sec faq"><h2>Questions, answered</h2>
+  <div class="q"><h3>Is this just a prompt pack?</h3><p>The entry tier is weekly prompts + workflows. The higher tiers are full systems — a Notion dashboard, monthly strategy, and launch templates. It's a machine, not a PDF.</p></div><div class="q"><h3>Who is this actually for?</h3><p>Creators, freelancers, and people building digital products who want to produce consistently without reinventing their process every week.</p></div><div class="q"><h3>Do the drops get stale?</h3><p>New drops land weekly and stack into a growing library. You're always getting fresh material, and you keep the back catalog.</p></div><div class="q"><h3>What if I'm not technical?</h3><p>Everything is copy-paste and comes with a walkthrough. The Notion dashboard is plug-and-play — duplicate it and go.</p></div></div>
+      <div class="sec"><div class="capture"><h2>Free: the Starter Prompt Vault</h2>
+  <div class="magnet">🎁 10 of my highest-leverage prompts + one workflow, free</div><br>
+  <p>Grab ten prompts and a full workflow to feel the difference a system makes — free, no card, unsubscribe anytime.</p>
+  <form onsubmit="return false;"><input type="email" placeholder="you@email.com"> <button class="btn">Send it →</button></form></div></div>
+    </div>
+<div class="stickycta"><b>Turn effort into a repeatable system</b><a class="b" href="products.html">See pricing →</a></div>
+<footer>© 2026 Kai Sterling · <b>grok.cirogamino.com</b> · Payments via <b>Polar</b> (secure checkout) · <span class="disc">✨ Virtual creator, powered by AI</span> · <!--sale -4--></footer>
+</body></html>

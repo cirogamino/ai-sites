@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciro Gamino — Author · Business Coach · AI Entrepreneur</title>
+  <meta name="description" content="Ciro Gamino is an author, business coach, and AI entrepreneur helping people build businesses and work smarter with AI.">
+  <meta name="theme-color" content="#05070c">
+  <meta name="color-scheme" content="dark">
+  <meta name="author" content="Ciro Gamino">
+  <link rel="canonical" href="https://cirogamino.com">
+
+  <meta property="og:title" content="Ciro Gamino — Author · Business Coach · AI Entrepreneur">
+  <meta property="og:description" content="Helping people build businesses and work smarter with AI.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ciro Gamino">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://cirogamino.com">
+  <meta property="og:image" content="https://cirogamino.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ciro Gamino — Author, Business Coach, AI Entrepreneur">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ciro Gamino — Author · Business Coach · AI Entrepreneur">
+  <meta name="twitter:description" content="Helping people build businesses and work smarter with AI.">
+  <meta name="twitter:image" content="https://cirogamino.com/images/og-image.png">
+  <meta name="twitter:image:alt" content="Ciro Gamino — Author, Business Coach, AI Entrepreneur">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305070c'/><text x='50' y='70' font-size='60' font-family='Georgia,serif' font-weight='bold' fill='%23e0b25a' text-anchor='middle'>C</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ciro Gamino",
+    "jobTitle": "Author, Business Coach, AI Entrepreneur",
+    "url": "https://cirogamino.com",
+    "image": "https://cirogamino.com/images/og-image.png",
+    "email": "ciro@cirogamino.com",
+    "description": "Author, business coach, and AI entrepreneur helping people build businesses and work smarter with AI.",
+    "sameAs": [
+      "https://instagram.com/cirogamino",
+      "https://x.com/cirogamino",
+      "https://facebook.com/ciro.gamino",
+      "https://tiktok.com/@cirogamino",
+      "https://linkedin.com/in/cirogamino",
+      "https://pinterest.com/cirogamino"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #05070c;
+      --bg-2: #0a0e16;
+      --bg-card: #0e131d;
+      --text: #eef2f7;
+      --text-muted: #9aa6b5;
+      --accent: #e0b25a;
+      --accent-2: #f0d090;
+      --accent-soft: rgba(224, 178, 90, 0.12);
+      --border: #1b2330;
+      --max: 1120px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-2); }
+    a:focus-visible, button:focus-visible, .step-item:focus-visible {
+      outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px;
+    }
+    .skip-link {
+      position: fixed; left: 16px; top: -60px; z-index: 100;
+      background: var(--accent); color: #10131a; font-weight: 600; font-size: 0.9rem;
+      padding: 10px 18px; border-radius: 0 0 10px 10px;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0; color: #10131a; }
+
+    /* ============ HERO STAGE ============ */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    /* Layer 0: optional video background (only shows if file exists) */
+    #hero-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0; opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    #hero-video.loaded { opacity: 0.55; }
+    /* Layer 1: animated cosmos canvas */
+    #space { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
+    /* Layer 2: nebula clouds (CSS, drifting) */
+    .nebula {
+      position: absolute; inset: -10%; z-index: 2; pointer-events: none;
+      background:
+        radial-gradient(38% 44% at 22% 30%, rgba(224,178,90,0.16), transparent 62%),
+        radial-gradient(42% 46% at 82% 26%, rgba(86,120,220,0.18), transparent 60%),
+        radial-gradient(50% 55% at 62% 88%, rgba(150,80,200,0.12), transparent 62%),
+        radial-gradient(40% 40% at 12% 82%, rgba(224,178,90,0.10), transparent 60%);
+      filter: blur(14px);
+      animation: nebulaDrift 26s var(--ease) infinite alternate;
+      mix-blend-mode: screen;
+    }
+    @keyframes nebulaDrift {
+      0%   { transform: translate3d(0,0,0) scale(1); }
+      100% { transform: translate3d(0,-30px,0) scale(1.12); }
+    }
+    /* Layer 3: the figure (cutout of Ciro) */
+    .figure-wrap {
+      position: absolute; z-index: 3; bottom: 0; right: 6%;
+      height: 92%; width: auto; display: flex; align-items: flex-end;
+      pointer-events: none; will-change: transform;
+    }
+    .figure-glow {
+      position: absolute; z-index: -1; left: 50%; top: 46%;
+      width: 130%; height: 70%; transform: translate(-50%,-50%);
+      background: radial-gradient(50% 50% at 50% 50%, rgba(224,178,90,0.30), transparent 70%);
+      filter: blur(30px);
+    }
+    .hero-figure {
+      height: 100%; width: auto; max-width: 46vw; object-fit: contain;
+      object-position: bottom center;
+      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
+      -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+    }
+    /* Layer 4: foreground sparkle canvas (stars in FRONT of figure = "intertwined") */
+    #space-front { position: absolute; inset: 0; z-index: 4; width: 100%; height: 100%; pointer-events: none; }
+    /* Vignette for legibility */
+    .hero::after {
+      content: ""; position: absolute; inset: 0; z-index: 5; pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(5,7,12,0.92) 0%, rgba(5,7,12,0.55) 42%, rgba(5,7,12,0.12) 70%, rgba(5,7,12,0.4) 100%),
+        linear-gradient(0deg, rgba(5,7,12,0.9) 0%, transparent 30%, transparent 75%, rgba(5,7,12,0.5) 100%);
+    }
+
+    /* Nav */
+    nav {
+      position: relative; z-index: 10;
+      background: transparent;
+      transition: background 0.3s ease, border-color 0.3s ease;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(5,7,12,0.82); backdrop-filter: blur(14px) saturate(140%);
+      border-bottom-color: var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 20px 26px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-family: "Fraunces", serif; font-weight: 700; font-size: 1.18rem; letter-spacing: 0.02em; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { color: var(--text-muted); font-size: 0.92rem; font-weight: 500; position: relative; }
+    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent); transition: width 0.3s var(--ease); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Hero content */
+    .hero-content {
+      position: relative; z-index: 8;
+      max-width: var(--max); margin: 0 auto; width: 100%;
+      padding: clamp(40px, 9vh, 110px) 26px 40px;
+      flex: 1; display: flex; flex-direction: column; justify-content: center;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.82rem; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 600;
+      color: var(--accent); margin-bottom: 24px;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--accent); display: inline-block; }
+    h1.hero-title {
+      font-family: "Fraunces", serif;
+      font-size: clamp(3rem, 9vw, 6.4rem);
+      line-height: 0.98; font-weight: 600; letter-spacing: -0.03em;
+      max-width: 15ch;
+    }
+    h1.hero-title em { color: var(--accent); font-style: italic; }
+    .subtitle { margin-top: 28px; font-size: clamp(1.05rem, 1.6vw, 1.28rem); color: var(--text-muted); max-width: 46ch; }
+    .hero-cta { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 16px 34px; border-radius: 12px; font-weight: 600; font-size: 1rem;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s ease;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), #cf9c40); color: #10131a; box-shadow: 0 8px 28px rgba(224,178,90,0.32); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(224,178,90,0.45); color: #10131a; }
+    .btn-ghost { border: 1px solid rgba(255,255,255,0.16); color: var(--text); background: rgba(255,255,255,0.03); backdrop-filter: blur(4px); }
+    .btn-ghost:hover { transform: translateY(-3px); border-color: var(--accent); }
+
+    /* Stats / credibility strip */
+    .hero-stats {
+      position: relative; z-index: 8;
+      max-width: var(--max); margin: 0 auto; width: 100%;
+      padding: 0 26px 30px; display: flex; gap: 46px; flex-wrap: wrap;
+    }
+    .stat .num { font-family: "Fraunces", serif; font-size: 1.9rem; font-weight: 600; color: var(--text); }
+    .stat .lbl { font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.04em; }
+    .scroll-cue {
+      position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 8;
+      font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-muted);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .scroll-cue span { width: 1px; height: 34px; background: linear-gradient(var(--accent), transparent); animation: cue 1.8s ease-in-out infinite; }
+    @keyframes cue { 0%,100%{ transform: scaleY(0.4); opacity: 0.4; transform-origin: top;} 50%{ transform: scaleY(1); opacity: 1;} }
+
+    /* ============ SECTIONS ============ */
+    .content-layer { position: relative; z-index: 6; background: var(--bg); }
+    section { max-width: var(--max); margin: 0 auto; padding: 100px 26px; border-top: 1px solid var(--border); }
+    .section-label { color: var(--accent); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
+    h2 { font-family: "Fraunces", serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 600; margin-bottom: 20px; letter-spacing: -0.01em; }
+    .section-intro { color: var(--text-muted); max-width: 640px; margin-bottom: 48px; font-size: 1.08rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 18px; padding: 36px;
+      transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
+      transform-style: preserve-3d; will-change: transform; position: relative; overflow: hidden;
+    }
+    .card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(400px circle at var(--mx,50%) var(--my,0%), rgba(224,178,90,0.10), transparent 40%); opacity: 0; transition: opacity 0.3s ease; }
+    .card:hover { border-color: rgba(224,178,90,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.45); }
+    .card:hover::before { opacity: 1; }
+    .card .icon { font-size: 1.7rem; margin-bottom: 18px; display: inline-flex; width: 56px; height: 56px; align-items: center; justify-content: center; background: var(--accent-soft); border-radius: 14px; }
+    .card h3 { font-family: "Fraunces", serif; font-size: 1.28rem; margin-bottom: 12px; font-weight: 600; }
+    .card p { color: var(--text-muted); font-size: 0.98rem; }
+    .card-kicker { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+
+    /* ============ PROOF / TESTIMONIALS ============ */
+    .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 10px; }
+    @media (max-width: 900px) { .proof-grid { grid-template-columns: 1fr; } }
+    .proof-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 30px 28px; display: flex; flex-direction: column; gap: 18px; position: relative; }
+    .proof-card::after { content: "\201C"; position: absolute; top: 14px; right: 22px; font-family: "Fraunces", serif; font-size: 3.4rem; line-height: 1; color: var(--accent); opacity: 0.25; }
+    .proof-quote { font-family: "Fraunces", serif; font-size: 1.05rem; font-style: italic; line-height: 1.55; color: var(--text); }
+    .proof-who { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+    .proof-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-soft); border: 1px solid rgba(224,178,90,0.35); display: flex; align-items: center; justify-content: center; font-family: "Fraunces", serif; font-weight: 600; color: var(--accent); font-size: 0.95rem; }
+    .proof-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .proof-role { font-size: 0.78rem; color: var(--text-muted); }
+
+    .about-flex { display: flex; gap: 54px; align-items: flex-start; flex-wrap: wrap; }
+    .about-text { flex: 1 1 420px; }
+    .about-text p { color: var(--text-muted); margin-bottom: 20px; font-size: 1.08rem; }
+    .about-text strong { color: var(--text); }
+    .quote { flex: 1 1 300px; background: var(--bg-card); border-left: 3px solid var(--accent); border-radius: 0 16px 16px 0; padding: 32px 34px; font-family: "Fraunces", serif; font-size: 1.32rem; font-style: italic; color: var(--text); }
+    .quote footer { margin-top: 14px; font-size: 0.85rem; color: var(--text-muted); font-style: normal; font-family: "Inter", sans-serif; }
+
+    .contact-box { background: linear-gradient(135deg, var(--bg-card), #141b26); border: 1px solid var(--border); border-radius: 22px; padding: 68px 46px; text-align: center; position: relative; overflow: hidden; }
+    .contact-box::before { content: ""; position: absolute; inset: 0; background: radial-gradient(50% 60% at 50% 0%, rgba(224,178,90,0.14), transparent 70%); pointer-events: none; }
+    .contact-box > * { position: relative; }
+    .contact-box p { color: var(--text-muted); margin-bottom: 30px; }
+    .email-link { font-family: "Fraunces", serif; font-size: 1.6rem; font-weight: 600; }
+    .socials { margin-top: 30px; display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; }
+    .socials a { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; transition: color 0.2s ease; }
+    .socials a:hover { color: var(--accent); }
+
+    footer.site { max-width: var(--max); margin: 0 auto; padding: 40px 26px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--text-muted); font-size: 0.85rem; }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (max-width: 780px) {
+      .nav-links { display: none; }
+      .figure-wrap { right: 50%; transform: translateX(50%) !important; height: 62%; opacity: 0.5; }
+      .hero-figure { max-width: 86vw; }
+      .hero::after { background: linear-gradient(0deg, rgba(5,7,12,0.94) 0%, rgba(5,7,12,0.4) 45%, rgba(5,7,12,0.55) 100%); }
+      .hero-content { justify-content: flex-start; padding-top: 14vh; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .nebula, .scroll-cue span { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ============ PROJECTS / STEP TRACKER ============ */
+    .projects-project-title { font-family: "Fraunces", serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 6px; }
+    .projects-project-sub { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 40px; }
+
+    .tutorial-stage { display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px; align-items: start; }
+
+    .tutorial-video-wrap { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; }
+    .tutorial-video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #0a0e16; }
+    .tutorial-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; text-align: center; padding: 30px;
+      background: radial-gradient(60% 60% at 50% 40%, rgba(224,178,90,0.08), transparent 70%);
+    }
+    .video-placeholder .play-badge {
+      width: 60px; height: 60px; border-radius: 50%; background: var(--accent-soft); border: 1px solid rgba(224,178,90,0.4);
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--accent);
+    }
+    .video-placeholder .placeholder-step-title { font-family: "Fraunces", serif; font-size: 1.1rem; color: var(--text); font-weight: 600; max-width: 34ch; }
+    .video-placeholder p { color: var(--text-muted); font-size: 0.9rem; max-width: 34ch; }
+
+    .tutorial-progress { height: 4px; background: var(--border); }
+    .tutorial-progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width 0.4s var(--ease); }
+
+    .tutorial-steps { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 26px; display: flex; flex-direction: column; max-height: 560px; }
+    .tutorial-steps-header { font-family: "Fraunces", serif; font-size: 1rem; font-weight: 600; margin-bottom: 4px; color: var(--text); }
+    .tutorial-steps-header span { color: var(--accent); }
+    .tutorial-steps-sub { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 18px; }
+
+    .step-list { list-style: none; overflow-y: auto; flex: 1; margin: 0 -8px; padding: 0 8px; display: flex; flex-direction: column; gap: 4px; }
+    .step-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 10px; border-radius: 10px; cursor: pointer; border: 1px solid transparent; transition: background 0.2s ease, border-color 0.2s ease; }
+    .step-item:hover { background: rgba(255,255,255,0.03); }
+    .step-item.active { background: var(--accent-soft); border-color: rgba(224,178,90,0.35); }
+    .step-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: var(--bg-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); }
+    .step-item.active .step-num { background: var(--accent); border-color: var(--accent); color: #10131a; }
+    .step-item.done .step-num { background: rgba(224,178,90,0.25); border-color: rgba(224,178,90,0.4); color: var(--accent); }
+    .step-copy .step-title { font-size: 0.92rem; font-weight: 600; color: var(--text); }
+    .step-copy .step-time { font-size: 0.74rem; color: var(--text-muted); margin-top: 2px; }
+
+    .tutorial-nav-btns { display: flex; gap: 10px; margin-top: 18px; }
+    .tutorial-nav-btns .btn { flex: 1; justify-content: center; padding: 12px 18px; font-size: 0.9rem; border: none; cursor: pointer; font-family: inherit; }
+    .tutorial-nav-btns .btn[disabled] { opacity: 0.35; pointer-events: none; }
+
+    @media (max-width: 900px) {
+      .tutorial-stage { grid-template-columns: 1fr; }
+      .tutorial-steps { max-height: none; }
+    }
+  </style>
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+</head>
+<body>
+
+  <a class="skip-link" href="#work">Skip to content</a>
+
+  <!-- ================= HERO ================= -->
+  <div class="hero" id="hero">
+    <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="" aria-hidden="true">
+      <source src="videos/hero.mp4" type="video/mp4">
+    </video>
+    <canvas id="space" aria-hidden="true"></canvas>
+    <div class="nebula" aria-hidden="true"></div>
+
+    <div class="figure-wrap" id="figure">
+      <div class="figure-glow" aria-hidden="true"></div>
+      <img class="hero-figure" id="hero-figure"
+           src="images/ciro-cutout.png"
+           alt="Ciro Gamino"
+           onerror="this.onerror=null;this.src='images/figure-placeholder.svg';this.classList.add('is-placeholder');">
+    </div>
+
+    <canvas id="space-front" aria-hidden="true"></canvas>
+
+    <nav id="nav">
+      <div class="nav-inner">
+        <div class="logo">CIRO<span>GAMINO</span></div>
+        <div class="nav-links">
+          <a href="#work">What I Do</a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <div class="eyebrow">Author · Coach · AI Entrepreneur</div>
+      <h1 class="hero-title">Bet on <em>yourself</em>.<br>Build with AI.</h1>
+      <p class="subtitle">I'm Ciro Gamino. I help people take the first step toward working for themselves — and use AI to get there faster than they thought possible.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Work With Me →</a>
+        <a class="btn btn-ghost" href="#work">See What I Do</a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><div class="num">1-on-1</div><div class="lbl">Coaching &amp; mentorship</div></div>
+      <div class="stat"><div class="num">AI-first</div><div class="lbl">Systems that save real hours</div></div>
+      <div class="stat"><div class="num">Author</div><div class="lbl">Writing &amp; speaking</div></div>
+    </div>
+
+    <a class="scroll-cue" href="#work" aria-label="Scroll down">Scroll<span></span></a>
+  </div>
+
+  <!-- ================= CONTENT ================= -->
+  <div class="content-layer" role="main">
+    <section id="work">
+      <div class="section-label reveal">What I Do</div>
+      <h2 class="reveal">Three ways I can help</h2>
+      <p class="section-intro reveal">Whether you're starting from zero or scaling what's already working, there's a place to plug in.</p>
+      <div class="grid">
+        <div class="card reveal" data-tilt>
+          <div class="icon" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e0b25a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+          <div class="card-kicker">Business Coaching</div>
+          <h3>From idea to first paying customer</h3>
+          <p>One-on-one guidance for building a business you can run from anywhere — and getting it to revenue, not just plans.</p>
+        </div>
+        <div class="card reveal" data-tilt>
+          <div class="icon" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e0b25a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <div class="card-kicker">AI for Entrepreneurs</div>
+          <h3>Get hours back every single week</h3>
+          <p>Practical AI systems and automation that save real hours — not hype. Put AI to work in your business today.</p>
+        </div>
+        <div class="card reveal" data-tilt>
+          <div class="icon" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e0b25a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+          <div class="card-kicker">Writing &amp; Speaking</div>
+          <h3>The mindset to finally bet on yourself</h3>
+          <p>Articles, books, and talks on entrepreneurship, working from home, and taking the first step for real.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION — hidden per Ciro's decision (2026-07-07) until real client
+         quotes exist. To re-enable: remove the `hidden` attribute below and restore
+         the "Results" nav link (<a href="#proof">Results</a>) after "What I Do". -->
+    <section id="proof" hidden>
+      <div class="section-label reveal">Results</div>
+      <h2 class="reveal">People who bet on themselves</h2>
+      <p class="section-intro reveal">Real words from people I've worked with. (These three are placeholders until Ciro drops in the real ones — the design is ready for them.)</p>
+      <div class="proof-grid">
+        <div class="proof-card reveal">
+          <div class="proof-quote">"Placeholder — swap with a real client quote about going from stuck to launched."</div>
+          <div class="proof-who">
+            <div class="proof-avatar">A</div>
+            <div><div class="proof-name">Client Name</div><div class="proof-role">What they built</div></div>
+          </div>
+        </div>
+        <div class="proof-card reveal">
+          <div class="proof-quote">"Placeholder — a quote about the hours AI systems saved them each week."</div>
+          <div class="proof-who">
+            <div class="proof-avatar">B</div>
+            <div><div class="proof-name">Client Name</div><div class="proof-role">Their business</div></div>
+          </div>
+        </div>
+        <div class="proof-card reveal">
+          <div class="proof-quote">"Placeholder — a quote about finally taking the first step and what changed."</div>
+          <div class="proof-who">
+            <div class="proof-avatar">C</div>
+            <div><div class="proof-name">Client Name</div><div class="proof-role">Where they are now</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-label reveal">Projects</div>
+      <h2 class="reveal">Build it with me — step by step</h2>
+      <p class="section-intro reveal">Real projects, filmed start to finish. Pick a step, watch it, build it, move to the next — no scrubbing through a 40-minute video to find the part you need.</p>
+
+      <div class="reveal">
+        <div class="projects-project-title">Project 01 — Rooftop Solar Checker</div>
+        <div class="projects-project-sub">Type in any address, get back its solar potential — built live with Google's Solar API.</div>
+
+        <div class="tutorial-stage">
+          <div class="tutorial-video-wrap">
+            <div class="tutorial-video-frame" id="tutorial-video-frame"></div>
+            <div class="tutorial-progress"><div class="tutorial-progress-fill" id="tutorial-progress-fill"></div></div>
+          </div>
+
+          <aside class="tutorial-steps">
+            <div class="tutorial-steps-header">Step <span id="step-current">1</span> of <span id="step-total">1</span></div>
+            <div class="tutorial-steps-sub">Click any step to jump straight there.</div>
+            <ol class="step-list" id="step-list"></ol>
+            <div class="tutorial-nav-btns">
+              <button class="btn btn-ghost" id="prev-step-btn" type="button">← Prev</button>
+              <button class="btn btn-primary" id="next-step-btn" type="button">Next Step →</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-label reveal">About</div>
+      <h2 class="reveal">Hey, I'm Ciro</h2>
+      <div class="about-flex">
+        <div class="about-text reveal">
+          <p>I've spent years helping people answer one question: <strong>"Have you ever wanted to work for yourself?"</strong> As an author, coach, and entrepreneur, I've built my work around showing others how to take that first step.</p>
+          <p>Today, AI is the biggest lever available to a small business owner — and most people aren't using it. I spend my time building with these tools and teaching entrepreneurs how to do the same.</p>
+          <p>Based in Wisconsin. Building everywhere.</p>
+        </div>
+        <blockquote class="quote reveal">
+          "You miss 100% of the shots you don't take."
+          <footer>— the reminder I run my business by</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box reveal">
+        <div class="section-label">Contact</div>
+        <h2>Let's talk</h2>
+        <p>Questions, coaching, or collaboration — my inbox is open.</p>
+        <a class="email-link" href="mailto:ciro@cirogamino.com">ciro@cirogamino.com</a>
+        <div class="socials">
+          <a href="https://instagram.com/cirogamino" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://x.com/cirogamino" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+          <a href="https://facebook.com/ciro.gamino" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://tiktok.com/@cirogamino" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://linkedin.com/in/cirogamino" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://pinterest.com/cirogamino" target="_blank" rel="noopener noreferrer">Pinterest</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site">
+      <div>© 2026 Ciro Gamino · CiroGamino.com</div>
+      <div><a href="mailto:ciro@cirogamino.com">ciro@cirogamino.com</a></div>
+    </footer>
+  </div>
+
+  <script>
+  (function () {
+    "use strict";
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* Video background: reveal only if it actually loads */
+    var vid = document.getElementById("hero-video");
+    if (vid) {
+      vid.addEventListener("loadeddata", function () { if (vid.videoWidth) vid.classList.add("loaded"); });
+      vid.addEventListener("error", function () { vid.style.display = "none"; });
+      // If no data after 2.5s (missing file), hide it
+      setTimeout(function () { if (!vid.classList.contains("loaded")) vid.style.display = "none"; }, 2500);
+    }
+
+    /* Nav: switch to fixed/blurred after hero */
+    var nav = document.getElementById("nav");
+    var onScroll = function () { nav.classList.toggle("scrolled", window.scrollY > window.innerHeight * 0.7); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    /* Scroll reveal */
+    if ("IntersectionObserver" in window && !reduceMotion) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.14 });
+      document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+    }
+
+    /* Card cursor glow + tilt */
+    if (!reduceMotion) {
+      document.querySelectorAll("[data-tilt]").forEach(function (card) {
+        card.addEventListener("mousemove", function (ev) {
+          var r = card.getBoundingClientRect();
+          var px = (ev.clientX - r.left) / r.width, py = (ev.clientY - r.top) / r.height;
+          card.style.setProperty("--mx", (px * 100) + "%");
+          card.style.setProperty("--my", (py * 100) + "%");
+          card.style.transform = "perspective(800px) rotateX(" + ((py - 0.5) * -6) + "deg) rotateY(" + ((px - 0.5) * 6) + "deg) translateY(-4px)";
+        });
+        card.addEventListener("mouseleave", function () { card.style.transform = ""; });
+      });
+    }
+
+    /* ============ COSMOS ENGINE ============ */
+    var hero = document.getElementById("hero");
+    var figure = document.getElementById("figure");
+    var back = document.getElementById("space");
+    var front = document.getElementById("space-front");
+    if (!back || reduceMotion) {
+      // Static starfield fallback for reduced motion
+      if (back) {
+        var c = back.getContext("2d"); back.width = innerWidth; back.height = innerHeight;
+        for (var i = 0; i < 160; i++) { c.globalAlpha = Math.random() * 0.7 + 0.2; c.fillStyle = "#cdd6e6"; c.fillRect(Math.random()*back.width, Math.random()*back.height, 1.4, 1.4); }
+        c.globalAlpha = 1;
+      }
+      return;
+    }
+
+    var bctx = back.getContext("2d");
+    var fctx = front.getContext("2d");
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W, H, stars = [], frontStars = [], shooting = [], mouse = { x: 0, y: 0, tx: 0, ty: 0 }, rafId = null;
+
+    function size() {
+      W = innerWidth; H = innerHeight;
+      [back, front].forEach(function (cv) {
+        cv.width = W * dpr; cv.height = H * dpr;
+        cv.style.width = W + "px"; cv.style.height = H + "px";
+      });
+      bctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      fctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      buildStars();
+    }
+
+    function buildStars() {
+      stars = [];
+      var count = Math.min(260, Math.floor((W * H) / 5200));
+      for (var i = 0; i < count; i++) {
+        var depth = Math.random();               // 0 far … 1 near
+        stars.push({
+          x: Math.random() * W, y: Math.random() * H,
+          z: depth,
+          r: depth * 1.6 + 0.3,
+          base: Math.random() * 0.5 + 0.35,
+          tw: Math.random() * Math.PI * 2,
+          tws: Math.random() * 0.03 + 0.008,
+          hue: Math.random() < 0.15 ? "224,178,90" : (Math.random() < 0.2 ? "150,180,255" : "220,228,245")
+        });
+      }
+      // Foreground stars — larger, drawn in FRONT of the figure for "intertwined" depth
+      frontStars = [];
+      for (var j = 0; j < 26; j++) {
+        frontStars.push({
+          x: Math.random() * W, y: Math.random() * H,
+          r: Math.random() * 1.4 + 1.1,
+          base: Math.random() * 0.4 + 0.5,
+          tw: Math.random() * Math.PI * 2,
+          tws: Math.random() * 0.04 + 0.02,
+          drift: Math.random() * 0.12 + 0.03
+        });
+      }
+    }
+
+    addEventListener("mousemove", function (e) {
+      mouse.tx = (e.clientX / W - 0.5);
+      mouse.ty = (e.clientY / H - 0.5);
+    }, { passive: true });
+    addEventListener("resize", size);
+
+    var scrollY = 0;
+    addEventListener("scroll", function () { scrollY = window.scrollY; }, { passive: true });
+
+    function frame() {
+      // Ease parallax
+      mouse.x += (mouse.tx - mouse.x) * 0.05;
+      mouse.y += (mouse.ty - mouse.y) * 0.05;
+
+      var heroH = hero.offsetHeight;
+      var inHero = scrollY < heroH;
+
+      bctx.clearRect(0, 0, W, H);
+      // Back stars with depth parallax
+      for (var i = 0; i < stars.length; i++) {
+        var s = stars[i];
+        s.tw += s.tws;
+        var a = s.base + Math.sin(s.tw) * 0.35;
+        var px = s.x + mouse.x * (18 + s.z * 46);
+        var py = s.y + mouse.y * (18 + s.z * 46) - scrollY * (0.04 + s.z * 0.12);
+        bctx.globalAlpha = Math.max(0, a);
+        bctx.fillStyle = "rgba(" + s.hue + ",1)";
+        bctx.beginPath(); bctx.arc(px, py, s.r, 0, 6.283); bctx.fill();
+        if (s.z > 0.7) { // glow on near stars
+          bctx.globalAlpha = a * 0.25;
+          bctx.beginPath(); bctx.arc(px, py, s.r * 3, 0, 6.283); bctx.fill();
+        }
+      }
+      bctx.globalAlpha = 1;
+
+      // Shooting stars occasionally
+      if (inHero && Math.random() < 0.006 && shooting.length < 2) {
+        shooting.push({ x: Math.random() * W * 0.7, y: Math.random() * H * 0.4, len: 0, sp: Math.random() * 6 + 7, life: 1 });
+      }
+      for (var k = shooting.length - 1; k >= 0; k--) {
+        var m = shooting[k];
+        m.x += m.sp; m.y += m.sp * 0.55; m.len = Math.min(m.len + m.sp, 180); m.life -= 0.012;
+        var grad = bctx.createLinearGradient(m.x, m.y, m.x - m.len, m.y - m.len * 0.55);
+        grad.addColorStop(0, "rgba(240,208,144," + Math.max(0, m.life) + ")");
+        grad.addColorStop(1, "rgba(240,208,144,0)");
+        bctx.strokeStyle = grad; bctx.lineWidth = 1.6;
+        bctx.beginPath(); bctx.moveTo(m.x, m.y); bctx.lineTo(m.x - m.len, m.y - m.len * 0.55); bctx.stroke();
+        if (m.life <= 0 || m.x > W) shooting.splice(k, 1);
+      }
+
+      // Parallax the figure subtly
+      if (figure) {
+        var fx = mouse.x * -26;
+        var fy = mouse.y * -14 + scrollY * 0.12;
+        figure.style.transform = "translate3d(" + fx + "px," + fy + "px,0)";
+      }
+
+      // Front sparkle layer (over the figure)
+      fctx.clearRect(0, 0, W, H);
+      for (var f = 0; f < frontStars.length; f++) {
+        var q = frontStars[f];
+        q.tw += q.tws; q.y -= q.drift; if (q.y < -4) { q.y = H + 4; q.x = Math.random() * W; }
+        var fa = q.base + Math.sin(q.tw) * 0.45;
+        var qx = q.x + mouse.x * 70;
+        var qy = q.y + mouse.y * 40 - scrollY * 0.2;
+        fctx.globalAlpha = Math.max(0, fa) * (inHero ? 1 : 0);
+        fctx.fillStyle = "rgba(240,224,180,1)";
+        fctx.beginPath(); fctx.arc(qx, qy, q.r, 0, 6.283); fctx.fill();
+        fctx.globalAlpha = Math.max(0, fa) * 0.3 * (inHero ? 1 : 0);
+        fctx.beginPath(); fctx.arc(qx, qy, q.r * 3.4, 0, 6.283); fctx.fill();
+      }
+      fctx.globalAlpha = 1;
+
+      rafId = requestAnimationFrame(frame);
+    }
+    size();
+    frame();
+
+    /* Perf: pause the animation loop while the tab is hidden (saves battery/CPU) */
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+      } else if (!rafId) {
+        rafId = requestAnimationFrame(frame);
+      }
+    });
+  })();
+  </script>
+
+  <!-- ============ PROJECTS STEP-TRACKER ============ -->
+  <script>
+  (function () {
+    "use strict";
+
+    /* ===== CONFIG: fill these in once a project is filmed & uploaded =====
+       Leave VIDEO_ID blank to show the "coming soon" placeholder — the step
+       list still works, it just won't seek a real video yet.
+       STEPS[].time is the timestamp (in seconds) where that step starts. */
+    var VIDEO_ID = "";
+    var STEPS = [
+      { title: "Set up a Google Cloud project", time: 0 },
+      { title: "Enable billing + the Solar API", time: 95 },
+      { title: "Generate an API key", time: 210 },
+      { title: "Build the address input form", time: 340 },
+      { title: "Call the Solar API from the browser", time: 505 },
+      { title: "Parse the building insights response", time: 690 },
+      { title: "Render panel count + savings estimate", time: 860 },
+      { title: "Style the results card", time: 1020 },
+      { title: "Handle addresses with no solar data", time: 1150 },
+      { title: "Deploy it live on the site", time: 1290 }
+    ];
+    /* ====================================================================== */
+
+    var frameEl = document.getElementById("tutorial-video-frame");
+    var stepListEl = document.getElementById("step-list");
+    var stepCurrentEl = document.getElementById("step-current");
+    var stepTotalEl = document.getElementById("step-total");
+    var progressFill = document.getElementById("tutorial-progress-fill");
+    var prevBtn = document.getElementById("prev-step-btn");
+    var nextBtn = document.getElementById("next-step-btn");
+    if (!frameEl || !STEPS.length) return;
+
+    var current = 0;
+    var player = null;
+    var hasVideo = !!VIDEO_ID;
+
+    stepTotalEl.textContent = STEPS.length;
+
+    function fmtTime(sec) {
+      var m = Math.floor(sec / 60), s = sec % 60;
+      return m + ":" + (s < 10 ? "0" : "") + s;
+    }
+
+    function renderSteps() {
+      stepListEl.innerHTML = "";
+      STEPS.forEach(function (step, i) {
+        var li = document.createElement("li");
+        li.className = "step-item" + (i === current ? " active" : "") + (i < current ? " done" : "");
+        li.setAttribute("role", "button");
+        li.setAttribute("tabindex", "0");
+        li.setAttribute("aria-label", "Step " + (i + 1) + ": " + step.title);
+        if (i === current) li.setAttribute("aria-current", "step");
+        li.innerHTML =
+          '<span class="step-num">' + (i + 1) + '</span>' +
+          '<span class="step-copy"><span class="step-title">' + step.title + '</span>' +
+          '<span class="step-time">' + fmtTime(step.time) + '</span></span>';
+        li.addEventListener("click", function () { goToStep(i); });
+        li.addEventListener("keydown", function (ev) {
+          if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); goToStep(i); }
+        });
+        stepListEl.appendChild(li);
+      });
+    }
+
+    function renderPlaceholder() {
+      frameEl.innerHTML =
+        '<div class="video-placeholder">' +
+          '<div class="play-badge">▶</div>' +
+          '<div class="placeholder-step-title">' + STEPS[current].title + '</div>' +
+          '<p>Video coming soon — this step tracker is already wired up. Once this project is filmed and uploaded to YouTube, this becomes a real interactive walkthrough.</p>' +
+        '</div>';
+    }
+
+    function goToStep(i) {
+      current = Math.max(0, Math.min(STEPS.length - 1, i));
+      stepCurrentEl.textContent = current + 1;
+      progressFill.style.width = (((current + 1) / STEPS.length) * 100) + "%";
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current === STEPS.length - 1;
+      renderSteps();
+      if (hasVideo && player && player.seekTo) {
+        player.seekTo(STEPS[current].time, true);
+        player.playVideo();
+      } else if (!hasVideo) {
+        renderPlaceholder();
+      }
+    }
+
+    prevBtn.addEventListener("click", function () { goToStep(current - 1); });
+    nextBtn.addEventListener("click", function () { goToStep(current + 1); });
+
+    if (hasVideo) {
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(tag);
+      window.onYouTubeIframeAPIReady = function () {
+        var playerDiv = document.createElement("div");
+        playerDiv.id = "yt-tutorial-player";
+        frameEl.appendChild(playerDiv);
+        player = new YT.Player("yt-tutorial-player", {
+          videoId: VIDEO_ID,
+          playerVars: { rel: 0, modestbranding: 1, start: STEPS[0].time },
+          events: { onReady: function () { goToStep(0); } }
+        });
+      };
+    }
+
+    goToStep(0);
+  })();
+  </script>
+
+</body>
+</html>

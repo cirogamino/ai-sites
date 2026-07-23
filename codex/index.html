@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wisconsin Volleyball Insider -2 | Rally Rex -2</title>
+<meta name="description" content="Wisconsin Volleyball Insider -2 is a weekly tracker for Wisconsin volleyball tournaments, leagues, deadlines, prices, formats, and registration links." />
+<style>
+:root {
+--bg: #07110d;
+--panel: #102018;
+--panel2: #162b21;
+--lime: #b8ff6a;
+--cream: #fff4d8;
+--muted: #b8c9bd;
+--line: #284837;
+--danger: #ffcf5a;
+--white: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+color: var(--cream);
+background:
+radial-gradient(circle at top left, rgba(184, 255, 106, 0.12), transparent 32%),
+linear-gradient(180deg, #07110d 0%, #0b1711 50%, #07110d 100%);
+line-height: 1.5;
+}
+a { color: var(--lime); text-decoration: none; }
+header {
+border-bottom: 1px solid var(--line);
+background: rgba(7, 17, 13, 0.92);
+position: sticky;
+top: 0;
+z-index: 10;
+backdrop-filter: blur(10px);
+}
+.nav {
+max-width: 1120px;
+margin: 0 auto;
+padding: 16px 20px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 16px;
+}
+.brand { font-weight: 800; letter-spacing: 0.4px; color: var(--white); }
+.brand span { color: var(--lime); }
+nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; }
+.preview {
+background: #ffcf5a;
+color: #111;
+text-align: center;
+padding: 10px 16px;
+font-weight: 800;
+letter-spacing: 0.3px;
+}
+.wrap { max-width: 1120px; margin: 0 auto; padding: 54px 20px; }
+.hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 34px; align-items: center; }
+.badge {
+display: inline-block;
+border: 1px solid var(--line);
+background: rgba(184, 255, 106, 0.08);
+color: var(--lime);
+padding: 8px 12px;
+border-radius: 999px;
+font-size: 13px;
+font-weight: 700;
+margin-bottom: 16px;
+}
+h1 { font-size: clamp(38px, 6vw, 72px); line-height: 0.95; margin: 0 0 20px; letter-spacing: -2px; }
+h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.05; margin: 0 0 16px; letter-spacing: -1px; }
+h3 { margin: 0 0 10px; font-size: 22px; }
+p { color: var(--muted); font-size: 17px; margin: 0 0 18px; }
+.hero-card {
+background: linear-gradient(145deg, rgba(184,255,106,0.14), rgba(16,32,24,0.95));
+border: 1px solid var(--line);
+border-radius: 28px;
+padding: 26px;
+box-shadow: 0 28px 80px rgba(0,0,0,0.35);
+}
+.rex {
+min-height: 360px;
+border-radius: 22px;
+background:
+radial-gradient(circle at center, rgba(184,255,106,0.2), transparent 40%),
+repeating-linear-gradient(90deg, transparent 0 28px, rgba(255,255,255,0.03) 28px 30px),
+linear-gradient(160deg, #193526, #0b1711);
+border: 1px solid var(--line);
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 24px;
+}
+.rex strong { display: block; color: var(--white); font-size: 30px; margin-bottom: 10px; }
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+.btn { display: inline-block; padding: 14px 18px; border-radius: 14px; font-weight: 800; border: 1px solid var(--line); }
+.btn-primary { background: var(--lime); color: #07110d; }
+.btn-secondary { background: transparent; color: var(--cream); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+.card { background: rgba(16, 32, 24, 0.92); border: 1px solid var(--line); border-radius: 22px; padding: 22px; }
+.price { font-size: 32px; color: var(--white); font-weight: 900; margin: 12px 0; }
+.small { font-size: 13px; color: var(--muted); }
+ul { padding-left: 20px; color: var(--muted); }
+li { margin-bottom: 8px; }
+.lead-box {
+background: linear-gradient(145deg, rgba(255, 207, 90, 0.12), rgba(16, 32, 24, 0.96));
+border: 1px solid rgba(255, 207, 90, 0.45);
+border-radius: 24px;
+padding: 28px;
+margin-top: 28px;
+}
+input {
+width: 100%;
+padding: 14px;
+border-radius: 12px;
+border: 1px solid var(--line);
+background: #07110d;
+color: var(--cream);
+margin: 8px 0 12px;
+font-size: 16px;
+}
+footer { border-top: 1px solid var(--line); padding: 30px 20px; text-align: center; color: var(--muted); font-size: 14px; }
+@media (max-width: 820px) { .hero, .grid { grid-template-columns: 1fr; } nav { justify-content: flex-end; } }
+</style>
+</head>
+<body>
+<div class="preview">PREVIEW SITE — Launch pending. Checkout links are disabled until Whop is live.</div>
+<header>
+<div class="nav">
+<div class="brand">Rally Rex <span>-2</span></div>
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="updates.html">Updates</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+<main>
+<section class="wrap hero">
+<div>
+<div class="badge">Wisconsin Volleyball Insider -2</div>
+<h1>Stop missing volleyball tournaments because the info is scattered.</h1>
+<p>
+Rally Rex -2 tracks Wisconsin and nearby Midwest volleyball tournaments, leagues,
+prices, deadlines, formats, and registration links so players and captains can
+find the next place to play faster.
+</p>
+<div class="cta-row">
+<a class="btn btn-primary" href="#lead-magnet">Get the free preview</a>
+<a class="btn btn-secondary" href="products.html">See the 3-product ladder</a>
+</div>
+</div>
+<div class="hero-card">
+<div class="rex">
+<div>
+<strong>Rally Rex -2</strong>
+<p>
+"Verify before you drive. Register before you brag.
+I track the messy volleyball calendar so captains do not have to."
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class="wrap">
+<h2>The -2 product ladder</h2>
+<p>One volleyball research engine, three recurring products.</p>
+<div class="grid">
+<article class="card">
+<h3>Wisconsin Volleyball Insider -2</h3>
+<p>Weekly tracker for players, captains, and free agents.</p>
+<div class="price">$12/mo</div>
+<ul>
+<li>Tournaments and leagues</li>
+<li>Prices and deadlines when public</li>
+<li>Registration links</li>
+<li>Friday tracker issue</li>
+</ul>
+<a class="btn btn-primary" href="#launch-pending">Join founding members</a>
+<!-- Future live URL: <WHOP_INSIDER_LINK>?utm_source=website_home&utm_campaign=-2 -->
+</article>
+<article class="card">
+<h3>Local Sports Promo Engine -2</h3>
+<p>Monthly ready-to-post marketing kit for organizers and venues.</p>
+<div class="price">$59/mo</div>
+<ul>
+<li>12 social captions</li>
+<li>4 graphic concepts</li>
+<li>2 email/SMS promos</li>
+<li>1 registration-page rewrite</li>
+</ul>
+<a class="btn btn-primary" href="#launch-pending">Get promo kit</a>
+<!-- Future live URL: <WHOP_PROMO_ENGINE_LINK>?utm_source=website_home&utm_campaign=-2 -->
+</article>
+<article class="card">
+<h3>Tournament Growth Desk -2</h3>
+<p>Monthly done-for-you campaign assets for serious events.</p>
+<div class="price">$299/mo</div>
+<ul>
+<li>Campaign strategy</li>
+<li>12 posts and 2 emails</li>
+<li>Reminder sequence</li>
+<li>Monthly recap</li>
+</ul>
+<a class="btn btn-primary" href="#launch-pending">Apply for founding slot</a>
+<!-- Future live URL: <WHOP_GROWTH_DESK_LINK>?utm_source=website_home&utm_campaign=-2 -->
+</article>
+</div>
+</section>
+<section class="wrap" id="lead-magnet">
+<div class="lead-box">
+<h2>Free lead magnet: Sample Issue #1</h2>
+<p>
+See the tracker before you join. The free preview includes real public leads like
+Paperfest, VolleyFiesta, Wisconsin Juniors sand events, Milwaukee Recreation adult
+volleyball, Lakeville North, and AVP Grass watchlist items.
+</p>
+<form>
+<label for="email">Email for free preview</label>
+<input id="email" type="email" placeholder="you@example.com" />
+<a class="btn btn-primary" href="#launch-pending">Get the free preview</a>
+<!-- Future live URL: <BEEHIIV_SIGNUP_LINK>?utm_source=website_home&utm_campaign=-2 -->
+</form>
+<p class="small">
+No fake listings. If a source does not publicly list price, deadline, or division,
+the tracker marks it pending instead of guessing.
+</p>
+</div>
+</section>
+<section class="wrap">
+<h2>What makes this different?</h2>
+<div class="grid">
+<article class="card">
+<h3>Real source notes</h3>
+<p>Every listing includes where the information came from and what still needs verification.</p>
+</article>
+<article class="card">
+<h3>Built for captains</h3>
+<p>Fast answers: date, format, price, deadline, location, and registration link.</p>
+</article>
+<article class="card">
+<h3>Honest watchlist</h3>
+<p>Recurring events stay on the radar even when registration is not open yet.</p>
+</article>
+</div>
+</section>
+</main>
+<footer>
+Independent tracker. Not affiliated with listed venues, tournaments, AVP, VolleyballLife, Milwaukee Recreation, or other organizers unless explicitly stated.
+</footer>
+</body>
+</html>
