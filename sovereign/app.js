@@ -130,17 +130,10 @@
     });
   }
 
-  // Quote page lock countdown (14 days from first open, session-only)
+  // Quote page lock countdown (14 days from first open — in-memory only)
   const timerEl = document.getElementById("lock-timer");
   if (timerEl) {
-    const KEY = "sovereign_quote_lock_end";
-    let end = Number(sessionStorage.getItem(KEY) || 0);
-    if (!end) {
-      end = Date.now() + 14 * 24 * 60 * 60 * 1000;
-      try {
-        sessionStorage.setItem(KEY, String(end));
-      } catch (_) {}
-    }
+    const end = Date.now() + 14 * 24 * 60 * 60 * 1000;
     function tick() {
       const ms = Math.max(0, end - Date.now());
       const d = Math.floor(ms / 86400000);
