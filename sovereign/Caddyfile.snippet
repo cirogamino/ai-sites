@@ -1,0 +1,9 @@
+# Add to /etc/caddy/Caddyfile on Hetzner (91.99.114.103)
+# Then: sudo systemctl reload caddy
+
+sovereign.cirogamino.com {
+	root * /srv/sites/sovereign
+	encode gzip
+	file_server
+	try_files {path} {path}/ /index.html
+}
