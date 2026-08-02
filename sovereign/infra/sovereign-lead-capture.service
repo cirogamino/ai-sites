@@ -1,0 +1,17 @@
+[Unit]
+Description=Sovereign lead capture endpoint
+After=network.target
+
+[Service]
+Type=simple
+User=aiagents
+Group=aiagents
+Environment=SOVEREIGN_LEADS_DIR=/var/lib/sovereign
+ExecStart=/usr/bin/python3 /opt/sovereign-lead-capture/lead_capture.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
