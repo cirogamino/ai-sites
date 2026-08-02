@@ -87,45 +87,35 @@
     });
   }
 
-  // Access form — mailto fallback until Stripe Payment Links
+  // Access form — server-side capture. Checkout is enabled only after real
+  // Stripe Payment Links are configured.
   const form = document.getElementById("access-form");
   const status = document.getElementById("form-status");
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const fd = new FormData(form);
       const pkg = fd.get("package") || fd.get("sku") || "voice";
-      const subject = encodeURIComponent("Sovereign access request — " + pkg);
-      const body = encodeURIComponent(
-        [
-          "Name: " + fd.get("name"),
-          "Company: " + fd.get("company"),
-          "Phone: " + fd.get("phone"),
-          "Email: " + fd.get("email"),
-          "City: " + (fd.get("city") || ""),
-          "Package: " + pkg,
-          "Notes: " + (fd.get("notes") || ""),
-          "",
-          "Source: sovereign.cirogamino.com Gate A",
-        ].join("\n")
-      );
-      // Stripe placeholder — replace STRIPE_LINK_* after Payment Links created
-      const stripeMap = {
-        voice: "",
-        pipeline: "",
-        command: "",
-        setup: "",
-        voice_setup: "",
-      };
-      const link = stripeMap[String(pkg)] || "";
-      if (link) {
-        window.location.href = link;
-        return;
-      }
-      window.location.href = "mailto:sovereign@cirogamino.com?subject=" + subject + "&body=" + body;
+      const submit = form.querySelector('button[type="submit"]');
       if (status) {
         status.hidden = false;
-        status.textContent = "Opening your email client… If nothing opens, write sovereign@cirogamino.com.";
+        status.textContent = "Sending your request…";
+      }
+      if (submit) submit.disabled = true;
+      try {
+        const response = await fetch("/api/sovereign/leads", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(Object.fromEntries(fd.entries())),
+        });
+        if (!response.ok) throw new Error("Lead request failed");
+        form.reset();
+        if (skuField) skuField.value = "voice";
+        if (status) status.textContent = "Request received. We’ll follow up by email.";
+      } catch (error) {
+        if (status) status.textContent = "We couldn’t receive that request. Please email sovereign@cirogamino.com.";
+      } finally {
+        if (submit) submit.disabled = false;
       }
     });
   }
