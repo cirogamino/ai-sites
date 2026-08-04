@@ -1,2 +1,6 @@
 ._*
 .DS_Store
+
+# Per-agent credentials -- NEVER commit these (added 2026-08-04 after audit)
+*/.ssh/
+*/.gitconfig
