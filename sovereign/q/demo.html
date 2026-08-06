@@ -3,14 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Interactive quote demo — Sovereign</title>
-  <meta name="description" content="Puppy-dog interactive quote for a sample Wisconsin concrete shop. 14-day price lock demo." />
+  <title>Sample operator quote — Sovereign</title>
+  <meta name="description" content="See exactly what a Sovereign quote looks like for a Wisconsin concrete shop: recommended stack, monthly cost, and recovery target." />
+  <meta name="robots" content="noindex" />
+  <meta property="og:title" content="Sample operator quote — Sovereign" />
+  <meta property="og:description" content="What a Sovereign quote looks like for a 3–8 truck flatwork shop." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://sovereign.cirogamino.com/share.png" />
+  <meta name="theme-color" content="#0f0e0c" />
+  <link rel="canonical" href="https://sovereign.cirogamino.com/q/demo.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c0c0b'/%3E%3Cpath d='M8 22V10h3.2l4.2 8.4L19.6 10H22.8v12h-2.6v-7.1L16.4 22h-2.1l-3.7-7.1V22H8z' fill='%23c4a574'/%3E%3C/svg%3E" />
 </head>
 <body>
+  <a class="skip" href="#quote">Skip to the quote</a>
+
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="../index.html" aria-label="Sovereign home">
@@ -24,68 +34,75 @@
         <button type="button" class="theme-btn" data-theme-toggle aria-label="Switch theme">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a class="btn btn-sm" href="../index.html#start">Request access</a>
+        <a class="btn btn-sm" href="../index.html#start">Get access</a>
       </div>
     </div>
   </header>
 
-  <main class="quote-shell">
-    <div class="wrap" style="max-width:960px">
-      <p class="eyebrow">Demo · /q/demo · Milwaukee corridor sample</p>
+  <main class="quote-shell" id="quote">
+    <div class="wrap">
+      <p class="eyebrow">Sample quote · Milwaukee corridor</p>
       <div class="quote-card">
         <div class="quote-top">
           <span class="lock">14-day price lock</span>
-          <h1>Custom operator quote for Lakeside Concrete Co.</h1>
-          <p style="color:color-mix(in oklab, var(--color-panel-text) 70%, transparent); max-width:48ch; font-size:var(--text-sm)">
-            Built from public signals + industry averages for a 3–8 truck flatwork shop.
-            This is the puppy-dog close shell — real outbound quotes will name the real company, city, and leakage math.
+          <h1>Operator quote for Lakeside Concrete Co.</h1>
+          <p class="quote-lede">
+            This is an example, not a real customer. It shows exactly what you receive after a
+            short call: a recommended setup, a fixed monthly number, and an honest recovery range
+            for a 3 to 8 truck flatwork shop.
           </p>
         </div>
         <div class="quote-body">
           <div>
-            <div class="quote-meta" style="margin-bottom:1.5rem">
-              <div><strong style="color:var(--color-text)">Prepared for</strong> Lakeside Concrete Co. (sample)</div>
-              <div><strong style="color:var(--color-text)">Market</strong> Milwaukee · Waukesha corridor</div>
-              <div><strong style="color:var(--color-text)">Focus</strong> Driveways · slabs · decorative · small commercial</div>
-              <div class="timer">Price lock: <strong id="lock-timer">14d remaining</strong></div>
+            <div class="quote-meta">
+              <div><strong>Prepared for</strong> Lakeside Concrete Co. (sample shop)</div>
+              <div><strong>Market</strong> Milwaukee and Waukesha corridor</div>
+              <div><strong>Focus</strong> Driveways, slabs, decorative, small commercial</div>
+              <div class="timer">Price lock: <strong id="lock-timer">14 days remaining</strong></div>
             </div>
 
-            <h2 style="font-family:var(--font-display); font-weight:400; font-size:var(--text-lg); margin-bottom:0.75rem">What we saw</h2>
-            <ul role="list" style="display:grid; gap:0.65rem; margin-bottom:1.5rem; font-size:var(--text-sm); color:var(--color-muted)">
-              <li>· Peak season phone traffic collides with pour windows</li>
-              <li>· After-hours driveway leads often wait until morning</li>
-              <li>· Estimate follow-up is owner-dependent, not systemized</li>
-              <li>· Paid search without a live answer path leaks spend</li>
+            <h2 class="quote-h">What we found</h2>
+            <ul class="quote-findings" role="list">
+              <li>Peak season phone traffic collides with pour windows</li>
+              <li>After-hours driveway calls sit until the next morning</li>
+              <li>Estimate follow-up depends on the owner, not a system</li>
+              <li>Paid search sends calls to a line nobody can answer</li>
             </ul>
 
-            <h2 style="font-family:var(--font-display); font-weight:400; font-size:var(--text-lg); margin-bottom:0.75rem">Recommended stack</h2>
+            <h2 class="quote-h">Recommended setup</h2>
             <div class="line-items">
-              <div class="row"><span>Private Build — go-live</span><span>$18,500</span></div>
-              <div class="row"><span>Voice — AI line + booking</span><span>$1,497/mo</span></div>
-              <div class="row"><span>Pipeline — chase + reviews</span><span>$2,497/mo</span></div>
-              <div class="row"><span>First 90 days operator total</span><span>$18,500 + $3,994/mo</span></div>
+              <div class="row"><span>Private Build — go-live</span><span>$18,500 one time</span></div>
+              <div class="row"><span>Voice — AI line and booking</span><span>$1,497/mo</span></div>
+              <div class="row"><span>Pipeline — follow-up and reviews</span><span>$2,497/mo</span></div>
+              <div class="row"><span>First 90 days, all in</span><span>$18,500 + $3,994/mo</span></div>
             </div>
           </div>
 
           <aside>
-            <div class="hero-panel" style="height:100%">
+            <div class="hero-panel">
               <p class="panel-label">Conservative recovery target</p>
               <p class="panel-stat">$14k–$22k<span>/mo</span></p>
-              <p class="panel-note">If 3–5 slow leads/week are recovered at mid-market close and job values. Not a guarantee — a planning range.</p>
-              <div class="panel-row"><span>Jobs/year to cover Voice</span><strong>~2 driveways</strong></div>
-              <div class="panel-row"><span>Go-live target</span><strong>≤ 72 hours</strong></div>
-              <div class="quote-actions" style="margin-top:1.5rem">
-                <a class="btn btn-block" href="../index.html#start">Lock this structure</a>
-                <a class="btn btn-ghost btn-block" href="../index.html#roi" style="border-color:color-mix(in oklab, var(--color-panel-text) 25%, transparent); color:var(--color-panel-text)">Adjust ROI on homepage</a>
+              <p class="panel-note">If three to five slow leads a week get recovered at mid-market close rates and job values. This is a planning range, not a guarantee.</p>
+              <div class="panel-row"><span>Jobs per year to cover Voice</span><strong>About 2 driveways</strong></div>
+              <div class="panel-row"><span>Time to go live</span><strong>Under 72 hours</strong></div>
+              <div class="quote-actions">
+                <a class="btn btn-block" href="../index.html#start">Lock this setup</a>
+                <a class="btn btn-ghost btn-block" href="../index.html#roi">Run your own numbers</a>
               </div>
-              <p class="panel-note" style="margin-top:1rem; margin-bottom:0">Real quotes use tokenized URLs: <code style="color:var(--color-accent)">/q/{token}</code>. This demo is public and non-binding.</p>
+              <p class="quote-note">Every real quote is sent as a private link for that one company. This sample page is public and not binding.</p>
             </div>
           </aside>
         </div>
       </div>
-      <p class="fine" style="margin-top:1.5rem">Sovereign · Demo only · No cold SMS · Estimates illustrative · <a href="../legal.html" style="color:inherit">Legal</a></p>
+      <p class="fine">Sovereign · Sample quote · No cold text messages · Figures are illustrative · <a href="../legal.html">Legal</a></p>
     </div>
   </main>
+
+  <div class="action-bar">
+    <a class="btn btn-ghost" href="../index.html#roi">Your math</a>
+    <a class="btn" href="../index.html#start">Request access</a>
+  </div>
+
   <script src="../app.js"></script>
 </body>
 </html>

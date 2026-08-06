@@ -23,6 +23,11 @@
   const y = document.getElementById("y");
   if (y) y.textContent = String(new Date().getFullYear());
 
+  // Reserve space for the mobile action bar only when it exists
+  if (document.querySelector(".action-bar")) {
+    document.body.classList.add("has-action-bar");
+  }
+
   // ROI
   const leads = document.getElementById("leads");
   const close = document.getElementById("close");
@@ -54,15 +59,54 @@
     if (leakDetail) {
       leakDetail.textContent =
         L +
-        " leads/wk × 4.3 × " +
+        (L === 1 ? " lead a week" : " leads a week") +
+        ", " +
         Math.round(C * 100) +
-        "% × " +
+        "% close rate, " +
         fmt(J) +
-        (haircut < 1 ? " × 50% conservative" : "");
+        " average job" +
+        (haircut < 1 ? ", cut in half to stay conservative" : "");
     }
+
+    // Payback: how many recovered jobs cover Voice each month
+    const VOICE = 1497;
+    const perJob = Math.max(J * haircut, 1);
+    const need = VOICE / perJob;
     if (jobsPay) {
-      const need = 1497 / Math.max(J * C * haircut, 1);
-      jobsPay.textContent = "~" + need.toFixed(1) + " jobs/mo";
+      jobsPay.textContent = need < 1 ? "less than 1 job/mo" : "~" + need.toFixed(1) + " jobs/mo";
+    }
+
+    // Comparison chart — leakage vs cost, scaled to the larger of the two
+    const barLeak = document.getElementById("bar-leak");
+    const barCost = document.getElementById("bar-cost");
+    const barLeakVal = document.getElementById("bar-leak-val");
+    const barCostVal = document.getElementById("bar-cost-val");
+    const caption = document.getElementById("bar-caption");
+    const tLeak = document.getElementById("t-leak");
+    const tPay = document.getElementById("t-payback");
+    if (barLeak && barCost) {
+      const max = Math.max(monthly, VOICE);
+      barLeak.style.width = Math.max((monthly / max) * 100, 2).toFixed(1) + "%";
+      barCost.style.width = Math.max((VOICE / max) * 100, 2).toFixed(1) + "%";
+    }
+    if (barLeakVal) barLeakVal.textContent = fmt(monthly);
+    if (barCostVal) barCostVal.textContent = fmt(VOICE);
+    if (tLeak) tLeak.textContent = fmt(monthly);
+    if (tPay) tPay.textContent = need < 1 ? "less than 1" : need.toFixed(1);
+    if (caption) {
+      if (monthly <= VOICE) {
+        caption.innerHTML =
+          "At these numbers the leak is smaller than the fee. <strong>Sovereign is not worth it for you yet</strong> \u2014 come back when call volume grows.";
+      } else {
+        const jobsWord = need < 1 ? "one job a month" : need.toFixed(1) + " jobs a month";
+        const multiple = (monthly / VOICE).toFixed(1);
+        caption.innerHTML =
+          "Recover just <strong>" +
+          jobsWord +
+          "</strong> and Voice has paid for itself. You are currently leaking <strong>" +
+          multiple +
+          "\u00d7</strong> what it costs.";
+      }
     }
   }
   [leads, close, job, cons].forEach((el) => el && el.addEventListener("input", calc));
@@ -120,15 +164,25 @@
     });
   }
 
-  // Quote page lock countdown (14 days from first open — in-memory only)
+  // Quote page lock countdown — anchored per visitor so it doesn't reset on reload
   const timerEl = document.getElementById("lock-timer");
   if (timerEl) {
-    const end = Date.now() + 14 * 24 * 60 * 60 * 1000;
+    let start = Number(localStorage.getItem("sov_lock_start"));
+    if (!start || Number.isNaN(start)) {
+      start = Date.now();
+      try {
+        localStorage.setItem("sov_lock_start", String(start));
+      } catch (e) {
+        /* private mode — fall back to session-only */
+      }
+    }
+    const end = start + 14 * 24 * 60 * 60 * 1000;
     function tick() {
       const ms = Math.max(0, end - Date.now());
       const d = Math.floor(ms / 86400000);
       const h = Math.floor((ms % 86400000) / 3600000);
-      timerEl.textContent = d + "d " + h + "h remaining on this price lock";
+      timerEl.textContent =
+        ms === 0 ? "price lock expired" : d + " days " + h + " hours remaining";
     }
     tick();
     setInterval(tick, 60000);

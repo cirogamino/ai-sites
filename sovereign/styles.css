@@ -1,11 +1,11 @@
-/* Sovereign Gate A — industrial concrete luxury */
+/* Sovereign — industrial concrete luxury */
 :root {
-  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-  --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-  --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.25rem);
+  --text-xs: clamp(0.875rem, 0.84rem + 0.18vw, 0.9375rem);
+  --text-sm: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-base: clamp(1.0625rem, 1.02rem + 0.25vw, 1.1875rem);
+  --text-lg: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-xl: clamp(1.625rem, 1.3rem + 1.25vw, 2.25rem);
+  --text-2xl: clamp(2.125rem, 1.35rem + 2.4vw, 3.25rem);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -101,9 +101,10 @@ body {
   min-height: 100dvh;
   font-family: var(--font-body);
   font-size: var(--text-base);
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--color-text);
   background: var(--color-bg);
+  text-rendering: optimizeLegibility;
 }
 
 img,
@@ -152,7 +153,7 @@ ol[role="list"] {
 }
 
 .wrap {
-  width: min(100% - 2.5rem, var(--content));
+  width: min(100% - 2.25rem, var(--content));
   margin-inline: auto;
 }
 .wrap.narrow {
@@ -185,6 +186,7 @@ ol[role="list"] {
 }
 .brand .mark {
   color: var(--color-primary);
+  flex: none;
 }
 .nav {
   display: none;
@@ -804,6 +806,370 @@ ol[role="list"] {
 }
 .timer strong {
   color: var(--color-primary);
+}
+
+/* ============================================================
+   ROI chart
+   ============================================================ */
+.roi-chart {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid color-mix(in oklab, var(--color-panel-text) 12%, transparent);
+}
+.roi-chart h3 {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: color-mix(in oklab, var(--color-panel-text) 55%, transparent);
+  margin-bottom: var(--space-4);
+}
+.bar-row {
+  margin-bottom: var(--space-5);
+}
+.bar-row:last-of-type {
+  margin-bottom: 0;
+}
+.bar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+}
+.bar-head .bar-label {
+  color: color-mix(in oklab, var(--color-panel-text) 78%, transparent);
+}
+.bar-head .bar-value {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.bar-track {
+  height: 1.5rem;
+  border-radius: var(--radius-sm);
+  background: color-mix(in oklab, var(--color-panel-text) 10%, transparent);
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: var(--radius-sm);
+  min-width: 3px;
+  transition: width 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bar-fill.is-leak {
+  background: linear-gradient(90deg, #b4472e, #d4713f);
+}
+.bar-fill.is-cost {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+.bar-caption {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid color-mix(in oklab, var(--color-panel-text) 12%, transparent);
+  font-size: var(--text-sm);
+  color: color-mix(in oklab, var(--color-panel-text) 80%, transparent);
+}
+.bar-caption strong {
+  color: var(--color-accent);
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Tabular figures anywhere money appears */
+.panel-stat,
+.price,
+.panel-row strong,
+.line-items .row span:last-child,
+.roi-controls strong {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   Mobile action bar
+   ============================================================ */
+.action-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  gap: var(--space-3);
+  padding: 0.7rem 1.1rem calc(0.7rem + env(safe-area-inset-bottom));
+  background: color-mix(in oklab, var(--color-bg) 94%, transparent);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--color-border);
+}
+.action-bar .btn {
+  flex: 1;
+  min-height: 2.9rem;
+  padding-inline: 0.6rem;
+  white-space: nowrap;
+}
+@media (max-width: 379px) {
+  .action-bar {
+    gap: var(--space-2);
+    padding-inline: 0.75rem;
+  }
+  .action-bar .btn {
+    font-size: 0.9375rem;
+    padding-inline: 0.4rem;
+  }
+}
+body.has-action-bar {
+  padding-bottom: 5.25rem;
+}
+@media (min-width: 900px) {
+  .action-bar {
+    display: none;
+  }
+  body.has-action-bar {
+    padding-bottom: 0;
+  }
+}
+
+/* ============================================================
+   Small-screen refinements
+   ============================================================ */
+@media (max-width: 899px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+  .hero {
+    padding-top: var(--space-10);
+  }
+  .hero h1 {
+    max-width: 20ch;
+    line-height: 1.12;
+  }
+  .lede,
+  .section-lede {
+    max-width: 40ch;
+  }
+  .hero-panel,
+  .roi-result,
+  .setup-card,
+  .quote-top,
+  .quote-body {
+    padding: var(--space-6);
+  }
+  .cta-row .btn {
+    flex: 1 1 100%;
+  }
+  .trust {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2) var(--space-4);
+  }
+  .footer-inner {
+    flex-direction: column;
+  }
+  .footer-links {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}
+
+@media (max-width: 479px) {
+  .wrap {
+    width: min(100% - 1.75rem, var(--content));
+  }
+  .wrap.narrow {
+    width: min(100% - 1.75rem, 560px);
+  }
+  .hero h1 {
+    max-width: none;
+  }
+  .panel-stat {
+    font-size: clamp(2.25rem, 11vw, 3rem);
+  }
+  .strip-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  .trust {
+    grid-template-columns: 1fr;
+  }
+  .bar-head {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .line-items .row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .line-items .row span:last-child {
+    font-weight: 700;
+  }
+  .hero-panel,
+  .roi-result,
+  .setup-card,
+  .quote-top,
+  .quote-body,
+  .card {
+    padding: var(--space-5);
+  }
+}
+
+/* Header CTA must never wrap on narrow phones */
+.header-actions .btn {
+  white-space: nowrap;
+}
+@media (max-width: 399px) {
+  .header-inner {
+    gap: var(--space-3);
+  }
+  .header-actions {
+    gap: var(--space-2);
+  }
+  .header-actions .btn-sm {
+    font-size: 0.9375rem;
+    padding-inline: 0.7rem;
+  }
+  .brand span {
+    font-size: 1rem;
+  }
+  .theme-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Tap targets */
+.nav a,
+.footer-links a,
+.panel-link,
+.faq summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+.theme-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.btn {
+  min-height: 2.75rem;
+}
+.btn-sm {
+  min-height: 2.5rem;
+}
+.intake input,
+.intake select,
+.intake textarea {
+  min-height: 2.9rem;
+  font-size: 1.0625rem;
+}
+.roi-controls input[type="range"] {
+  min-height: 2.5rem;
+}
+
+/* ============================================================
+   Quote page + legal page
+   ============================================================ */
+.quote-lede {
+  color: color-mix(in oklab, var(--color-panel-text) 72%, transparent);
+  max-width: 52ch;
+  font-size: var(--text-sm);
+}
+.quote-meta strong {
+  color: var(--color-text);
+}
+.quote-h {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-lg);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+.quote-meta {
+  margin-bottom: var(--space-2);
+}
+
+/* Ghost buttons sitting on the dark panel need light chrome */
+.hero-panel .btn-ghost,
+.roi-result .btn-ghost {
+  border-color: color-mix(in oklab, var(--color-panel-text) 30%, transparent);
+  color: var(--color-panel-text);
+  background: transparent;
+}
+.hero-panel .btn-ghost:hover,
+.roi-result .btn-ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: color-mix(in oklab, var(--color-panel-text) 8%, transparent);
+}
+.quote-findings {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+.quote-findings li {
+  position: relative;
+  padding-left: 1.35rem;
+}
+.quote-findings li::before {
+  content: "·";
+  position: absolute;
+  left: 0.25rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.quote-note {
+  margin-top: var(--space-5);
+  margin-bottom: 0;
+  font-size: var(--text-sm);
+  color: color-mix(in oklab, var(--color-panel-text) 65%, transparent);
+}
+.legal-page h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-4);
+}
+.legal-page h2 {
+  font-size: var(--text-lg);
+  font-family: var(--font-display);
+  font-weight: 400;
+  margin-bottom: var(--space-3);
+}
+.legal-block {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  margin-bottom: var(--space-6);
+}
+.legal-block p,
+.legal-block li {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  max-width: 68ch;
+}
+.legal-block ul {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: 1.1rem;
+}
+.legal-updated {
+  font-size: var(--text-xs);
+  color: var(--color-faint);
+  margin-bottom: var(--space-8);
 }
 
 @media (prefers-reduced-motion: reduce) {

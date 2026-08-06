@@ -8,6 +8,16 @@
   <meta property="og:title" content="Sovereign — Never miss another pour-hour bid" />
   <meta property="og:description" content="AI voice + follow-up for concrete contractors. Voice $1,497/mo. Private Build from $15k." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sovereign.cirogamino.com/" />
+  <meta property="og:image" content="https://sovereign.cirogamino.com/share.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sovereign — Never miss another pour-hour bid" />
+  <meta name="twitter:description" content="AI voice + follow-up for concrete contractors. Voice from $1,497/mo." />
+  <meta name="twitter:image" content="https://sovereign.cirogamino.com/share.png" />
+  <meta name="theme-color" content="#0f0e0c" />
+  <link rel="canonical" href="https://sovereign.cirogamino.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -46,11 +56,11 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Concrete · Milwaukee corridor · Wave 0</p>
+          <p class="eyebrow">Concrete · Milwaukee corridor · Now onboarding</p>
           <h1>Never miss another bid while the crew is pouring.</h1>
           <p class="lede">Sovereign is an AI operator for concrete and flatwork shops. It answers pour-hour calls, books site walks, and chases estimates — so leads don’t die in voicemail.</p>
           <div class="cta-row">
-            <a class="btn" href="q/demo.html">Open interactive demo quote</a>
+            <a class="btn" href="q/demo.html">See a sample quote</a>
             <a class="btn btn-ghost" href="#roi">Run your leakage math</a>
           </div>
           <ul class="trust" role="list">
@@ -163,9 +173,39 @@
           <div class="roi-result">
             <p class="panel-label">Estimated monthly leakage</p>
             <p class="panel-stat" id="leak-out">$18,400<span>/mo</span></p>
-            <p class="panel-note" id="leak-detail">4 leads/wk × 4.3 × 25% × $8,500 × 50% conservative</p>
+            <p class="panel-note" id="leak-detail">4 leads a week, 25% close rate, $8,500 average job, cut in half to stay conservative</p>
+
+            <div class="roi-chart">
+              <h3>Leaking now vs. what Sovereign costs</h3>
+              <div class="bar-row">
+                <div class="bar-head">
+                  <span class="bar-label">Revenue slipping away each month</span>
+                  <span class="bar-value" id="bar-leak-val">$18,400</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill is-leak" id="bar-leak" style="width:100%"></div></div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-head">
+                  <span class="bar-label">Sovereign Voice, per month</span>
+                  <span class="bar-value" id="bar-cost-val">$1,497</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill is-cost" id="bar-cost" style="width:8%"></div></div>
+              </div>
+              <p class="bar-caption" id="bar-caption">Recover just <strong>one job a month</strong> and Voice has paid for itself.</p>
+              <div class="visually-hidden">
+              <table id="roi-table">
+                <caption>ROI comparison</caption>
+                <tbody>
+                  <tr><th scope="row">Monthly leakage</th><td id="t-leak">$18,400</td></tr>
+                  <tr><th scope="row">Sovereign Voice monthly cost</th><td>$1,497</td></tr>
+                  <tr><th scope="row">Jobs to recover for payback</th><td id="t-payback">1</td></tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+
             <div class="panel-row"><span>Voice pays for itself if you recover</span><strong id="jobs-payback">~0.2 jobs/mo</strong></div>
-            <a class="btn btn-block" href="q/demo.html">Open full demo quote</a>
+            <a class="btn btn-block" href="q/demo.html">See a full sample quote</a>
           </div>
         </div>
       </div>
@@ -174,7 +214,7 @@
     <section id="pricing" class="section section-alt">
       <div class="wrap">
         <h2>Pricing</h2>
-        <p class="section-lede">Accessible premium. All digital. Cancel monthly after setup terms. Stripe checkout wires in Gate B — request access now.</p>
+        <p class="section-lede">Accessible premium. All digital. Cancel monthly after setup terms. Card checkout is coming — request access and we'll get you set up directly.</p>
         <div class="pricing-grid">
           <article class="price-card">
             <p class="t">Monthly</p>
@@ -304,9 +344,14 @@
       </div>
     </div>
     <div class="wrap">
-      <p class="fine">© <span id="y"></span> Sovereign · Ciro Gamino · Gate A preview on sovereign.cirogamino.com</p>
+      <p class="fine">© <span id="y"></span> Sovereign · Ciro Gamino · Milwaukee, Wisconsin</p>
     </div>
   </footer>
+
+  <div class="action-bar">
+    <a class="btn btn-ghost" href="#roi">Run the math</a>
+    <a class="btn" href="#start">Request access</a>
+  </div>
 
   <script src="app.js"></script>
 </body>
